@@ -55,8 +55,8 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2022-12-forgeries-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
-- Starts December 09, 2022 20:00 UTC
-- Ends December 12, 2022 20:00 UTC
+- Starts December 13, 2022 20:00 UTC
+- Ends December 16, 2022 20:00 UTC
 
 ## C4udit / Publicly Known Issues
 
