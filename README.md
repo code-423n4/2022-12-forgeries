@@ -1,50 +1,3 @@
-# ✨ So you want to sponsor a contest
-
-This `README.md` contains a set of checklists for our contest collaboration.
-
-Your contest will use two repos: 
-- **a _contest_ repo** (this one), which is used for scoping your contest and for providing information to contestants (wardens)
-- **a _findings_ repo**, where issues are submitted (shared with you after the contest) 
-
-Ultimately, when we launch the contest, this contest repo will be made public and will contain the smart contracts to be reviewed and all the information needed for contest participants. The findings repo will be made public after the contest report is published and your team has mitigated the identified issues.
-
-Some of the checklists in this doc are for **C4 (🐺)** and some of them are for **you as the contest sponsor (⭐️)**.
-
----
-
-# Repo setup
-
-## ⭐️ Sponsor: Add code to this repo
-
-- [ ] Create a PR to this repo with the below changes:
-- [ ] Provide a self-contained repository with working commands that will build (at least) all in-scope contracts, and commands that will run tests producing gas reports for the relevant contracts.
-- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
-- [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 24 hours prior to contest start time.**
-- [ ] Be prepared for a 🚨code freeze🚨 for the duration of the contest — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the contest. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
-
-
----
-
-## ⭐️ Sponsor: Edit this README
-
-Under "SPONSORS ADD INFO HERE" heading below, include the following:
-
-- [ ] Modify the bottom of this `README.md` file to describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. ([Here's a well-constructed example.](https://github.com/code-423n4/2022-08-foundation#readme))
-  - [ ] When linking, please provide all links as full absolute links versus relative links
-  - [ ] All information should be provided in markdown format (HTML does not render on Code4rena.com)
-- [ ] Under the "Scope" heading, provide the name of each contract and:
-  - [ ] source lines of code (excluding blank lines and comments) in each
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
-- [ ] Describe any novel or unique curve logic or mathematical models implemented in the contracts
-- [ ] Does the token conform to the ERC-20 standard? In what specific ways does it differ?
-- [ ] Describe anything else that adds any special logic that makes your approach unique
-- [ ] Identify any areas of specific concern in reviewing the code
-- [ ] Optional / nice to have: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
-- [ ] Delete this checklist and all text above the line below when you're ready.
-
----
-
 # Forgeries contest details
 - Total Prize Pool: $36,500 USDC
   - HM awards: $25,500 USDC 
@@ -64,29 +17,50 @@ The C4audit output for the contest can be found [here](add link to report) withi
 
 *Note for C4 wardens: Anything included in the C4udit output is considered a publicly known issue and is ineligible for awards.*
 
-[ ⭐️ SPONSORS ADD INFO HERE ]
+We rely on `@chainlink/contracts` to supply `VRF` numbers and this contract clearly documents `chain.link` as a dependency for this project. Any issues directly related to the chainlink infastructure contracts other than incorrect configuration of their libraries within this project are not in scope for this audit.
 
 # Overview
 
-*Please provide some context about the code being audited, and identify any areas of specific concern in reviewing the code. (This is a good place to link to your docs, if you have them.)*
+We want to raffle away a single NFT (_token_) based off of another NFT collection (or _drawingToken_).
+
+For instance, we could raffle off a single high value NFT to any cryptopunk holder, the punk that wins can choose to claim the NFT. If they do not claim, a re-roll or redraw can be done to select a new holder that would be able to claim the NFT.
+
+The contract is a hyperstructure (https://jacob.energy/hyperstructures.html) except for the dependency on chain.link (https://chain.link/).
+
+We are utilizing the `chain.link` Verifiable Random Function (`VRF`) contract tools to fairly raffle off the NFT. Their `VRF` docs can be found at: https://docs.chain.link/vrf/v2/introduction/.
+
+The main functions are `VRFNFTRandomDrawFactory.makeNewDraw()` to create a new non-upgradeable minimal clones proxy draw contract with your desired configuration. Each contract is separate to allow for easier UX and more security with interactions. After the drawing is created, it needs to be started which will pull the NFT from the creator/owner's wallet up for raffle when they call `VRFNFTRandomDraw.startDraw()`.
+
+After the drawing is started, we will request a random entropy from chain.link using the internal `_requestRoll()` function. Once `chain.link` returns the data in the `fulfillRandomWords()` callback the raffle NFT will be chosen and saved. If the raffle NFT is burned or removed this will still complete and a redraw will need to happen to find an NFT that is active/accessible to draw the winning NFT. Most raffles will use a specific contract that users will have a high incentive to withdraw their winning NFT.
+
+The winning user can determine if they have won by calling `hasUserWon(address)` that checks the owner of the winning NFT to return the winning user. They also can look at `request().currentChosenTokenId` to see the currently chosen winning NFT token id. Once they have won, they can call `winnerClaimNFT()` from the account that won to have the raffled NFT transferred to the winner.
+
+If the winning user does not claim the winning NFT within a specific deadline, the owner can call `redraw()` to redraw the NFT raffle. This is an `ownerOnly` function that will call into `chain.link`.
+
+If no users ultimately claim the NFT, the admin specifies a timelock period after which they can retrieve the raffled NFT.
 
 # Scope
 
-*List all files in scope in the table below -- and feel free to add notes here to emphasize areas of focus.*
-
 | Contract | SLOC | Purpose | Libraries used |  
 | ----------- | ----------- | ----------- | ----------- |
-| contracts/folder/sample.sol | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+| IVRFNFTRandomDraw | 10 | Interface to the factory VRFNFTRandomDrawFactory contract | None |
+| IVRFNFTRandomDrawFactory | 62 | Interface to the main VRFNFTRandomDraw contract | None |
+| VRFNFTRandomDrawFactory | 27 | This contract is a factory for raffles, allows creating a new drawing contract. | [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/) |
+| VRFNFTRandomDraw | 194 | This contract is the main escrow and VRF-integrated raffle contract | [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/), [`@chainlink/contracts`](https://github.com/smartcontractkit/chainlink) |
+| IOwnableUpgradeable | 15 | The interface to an owner safe-transferrable upgradeable openzeppelin fork | | 
+| OwnableUpgradeable | 73 | This contract is the main escrow and VRF-integrated raffle contract | [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/) |
 
 ## Out of scope
 
-*List any files/contracts that are out of scope for this audit.*
+1. OpenZeppelin dependency contracts
+2. Chainlink dependency architecture / contracts
+3. Issues / drawbacks of using specific EIP standards (EIP721 (NFT Token standard), EIP1167 (minimal proxies/clones))
+4. Assuming that the NFT up for raffle and NFT that is used for the raffle are both non-malicious contracts not attempting to compromise this raffle contract (within reason). Assume creators of raffles will do checks to ensure that the NFT itself is not compromised or unusual preventing the functioning of the raffle contract.
 
 # Additional Context
 
-*Describe any novel or unique curve logic or mathematical models implemented in the contracts*
-
-*Sponsor, please confirm/edit the information below.*
+1. We have no unique curve logic or mathematical models in this contract.
+2. This contract should prevent the owner from iterrupting the contest until the timelock unlocks at the end and preventing any users that do not win from withdrawing the NFT.
 
 ## Scoping Details 
 ```
@@ -114,6 +88,14 @@ The C4audit output for the contest can be found [here](add link to report) withi
 
 # Tests
 
-*Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report.* 
+### To run tests:
 
-*Note: Many wardens run Slither as a first pass for testing.  Please document any known errors with no workaround.* 
+1. Setup `yarn`: https://yarnpkg.com/getting-started/install
+2. Setup `forge`: https://book.getfoundry.sh/getting-started/installation
+3. Install dependencies: run `yarn`
+4. Run tests: run `yarn test`
+
+### Slither notes:
+
+1. Slither will have issues with the try/catch blocks upon first test
+2. All test files and files from `chain.link` have issues that are out of scope in the repo for Slither.
