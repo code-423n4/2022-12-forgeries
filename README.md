@@ -21,11 +21,11 @@ We rely on `@chainlink/contracts` to supply `VRF` numbers and this contract clea
 
 # Overview
 
-We want to raffle away a single NFT (_token_) based off of another NFT collection (or _drawingToken_).
+We want to raffle away a single NFT (_token_) based off of another NFT collection (or _drawingToken_) in a fair and trustless manner.
 
 For instance, we could raffle off a single high value NFT to any cryptopunk holder, the punk that wins can choose to claim the NFT. If they do not claim, a re-roll or redraw can be done to select a new holder that would be able to claim the NFT.
 
-The contract is a hyperstructure (https://jacob.energy/hyperstructures.html) except for the dependency on chain.link (https://chain.link/).
+The contract follows the hyperstructure concept (https://jacob.energy/hyperstructures.html) except for the dependency on chain.link (https://chain.link/).
 
 We are utilizing the `chain.link` Verifiable Random Function (`VRF`) contract tools to fairly raffle off the NFT. Their `VRF` docs can be found at: https://docs.chain.link/vrf/v2/introduction/.
 
@@ -45,7 +45,9 @@ If no users ultimately claim the NFT, the admin specifies a timelock period afte
 | ----------- | ----------- | ----------- | ----------- |
 | IVRFNFTRandomDraw | 10 | Interface to the factory VRFNFTRandomDrawFactory contract | None |
 | IVRFNFTRandomDrawFactory | 62 | Interface to the main VRFNFTRandomDraw contract | None |
-| VRFNFTRandomDrawFactory | 27 | This contract is a factory for raffles, allows creating a new drawing contract. | [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/) |
+| IVRFNFTRandomDrawFactoryProxy | 62 | Interface to the main VRFNFTRandomDraw contract | None |
+| VRFNFTRandomDrawFactory | 41 | Factory for VRF NFT Raffle, UUPS Upgradable by owner. | [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/) |
+| VRFNFTRandomDrawFactoryProxy | 41 | Proxy Contract linking to the Factory | [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/) |
 | VRFNFTRandomDraw | 194 | This contract is the main escrow and VRF-integrated raffle contract | [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/), [`@chainlink/contracts`](https://github.com/smartcontractkit/chainlink) |
 | IOwnableUpgradeable | 15 | The interface to an owner safe-transferrable upgradeable openzeppelin fork | | 
 | OwnableUpgradeable | 73 | This contract is the main escrow and VRF-integrated raffle contract | [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/) |
@@ -53,9 +55,10 @@ If no users ultimately claim the NFT, the admin specifies a timelock period afte
 ## Out of scope
 
 1. OpenZeppelin dependency contracts
-2. Chainlink dependency architecture / contracts
-3. Issues / drawbacks of using specific EIP standards (EIP721 (NFT Token standard), EIP1167 (minimal proxies/clones))
-4. Assuming that the NFT up for raffle and NFT that is used for the raffle are both non-malicious contracts not attempting to compromise this raffle contract (within reason). Assume creators of raffles will do checks to ensure that the NFT itself is not compromised or unusual preventing the functioning of the raffle contract.
+2. UUPS Proxy and OpenZeppelin implementation thereof
+3. Chainlink dependency architecture / contracts
+4. Issues / drawbacks of using specific EIP standards (EIP721 (NFT Token standard), EIP1167 (minimal proxies/clones))
+5. The NFT up for raffle and NFT that is used for the raffle are non-malicious contracts not attempting to compromise this raffle contract (within reason). Assume creators of raffles will do checks to ensure that the NFT itself is not compromised or unusual preventing the functioning of the raffle contract.
 
 # Additional Context
 
@@ -65,10 +68,10 @@ If no users ultimately claim the NFT, the admin specifies a timelock period afte
 ## Scoping Details 
 ```
 - If you have a public code repo, please share it here:  https://github.com/0xigami/vrf-nft-raffle
-- How many contracts are in scope?:   2
-- Total SLoC for these contracts?:  250
+- How many contracts are in scope?:   3
+- Total SLoC for these contracts?:  320
 - How many external imports are there?: 6 
-- How many separate interfaces and struct definitions are there for the contracts within scope?:  2 structs, 0 interfaces
+- How many separate interfaces and struct definitions are there for the contracts within scope?:  2 structs, 2 interfaces
 - Does most of your code generally use composition or inheritance?:   Code typically uses composition
 - How many external calls?:   4
 - What is the overall line coverage percentage provided by your tests?:  94
