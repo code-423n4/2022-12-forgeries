@@ -41,16 +41,41 @@ If no users ultimately claim the NFT, the admin specifies a timelock period afte
 
 # Scope
 
-| Contract | SLOC | Purpose | Libraries used |  
-| ----------- | ----------- | ----------- | ----------- |
-| IVRFNFTRandomDraw | 10 | Interface to the factory VRFNFTRandomDrawFactory contract | None |
-| IVRFNFTRandomDrawFactory | 62 | Interface to the main VRFNFTRandomDraw contract | None |
-| IVRFNFTRandomDrawFactoryProxy | 62 | Interface to the main VRFNFTRandomDraw contract | None |
-| VRFNFTRandomDrawFactory | 41 | Factory for VRF NFT Raffle, UUPS Upgradable by owner. | [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/) |
-| VRFNFTRandomDrawFactoryProxy | 41 | Proxy Contract linking to the Factory | [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/) |
-| VRFNFTRandomDraw | 194 | This contract is the main escrow and VRF-integrated raffle contract | [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/), [`@chainlink/contracts`](https://github.com/smartcontractkit/chainlink) |
-| IOwnableUpgradeable | 15 | The interface to an owner safe-transferrable upgradeable openzeppelin fork | | 
-| OwnableUpgradeable | 73 | This contract is the main escrow and VRF-integrated raffle contract | [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/) |
+### Files in scope
+|File|[SLOC](#nowhere "(nSLOC, SLOC, Lines)")|Description and [Coverage](#nowhere "(Lines hit / Total)")|Libraries|
+|:-|:-:|:-|:-|
+|_Contracts (4)_|
+|[src/utils/Version.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/utils/Version.sol)|[10](#nowhere "(nSLOC:10, SLOC:10, Lines:16)")|[100.00%](#nowhere "(Hit:1 / Total:1)")||
+|[src/VRFNFTRandomDrawFactoryProxy.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/VRFNFTRandomDrawFactoryProxy.sol) |[15](#nowhere "(nSLOC:15, SLOC:15, Lines:22)")|Proxy Contract linking to the Factory, &nbsp;&nbsp;-| [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/)|
+|[src/VRFNFTRandomDrawFactory.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/VRFNFTRandomDrawFactory.sol)|[41](#nowhere "(nSLOC:34, SLOC:41, Lines:60)")|Factory for VRF NFT Raffle, UUPS Upgradable by owner., &nbsp;&nbsp;[100.00%](#nowhere "(Hit:7 / Total:7)")| [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/)|
+|[src/VRFNFTRandomDraw.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/VRFNFTRandomDraw.sol) [♻️](#nowhere "TryCatch Blocks")|[196](#nowhere "(nSLOC:182, SLOC:196, Lines:321)")|This contract is the main escrow and VRF-integrated raffle contract, &nbsp;&nbsp;[86.67%](#nowhere "(Hit:52 / Total:60)")| [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/) [`@chainlink/contracts`](https://github.com/smartcontractkit/chainlink)|
+|_Abstracts (1)_|
+|[src/ownable/OwnableUpgradeable.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/ownable/OwnableUpgradeable.sol)|[73](#nowhere "(nSLOC:61, SLOC:73, Lines:133)")|This contract is the main escrow and VRF-integrated raffle contract, &nbsp;&nbsp;[94.12%](#nowhere "(Hit:16 / Total:17)")| [`@openzeppelin/contracts-upgradeable`](https://openzeppelin.com/contracts/)|
+|_Interfaces (3)_|
+|[src/interfaces/IVRFNFTRandomDrawFactory.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/interfaces/IVRFNFTRandomDrawFactory.sol)|[11](#nowhere "(nSLOC:9, SLOC:11, Lines:25)")|Interface to the main VRFNFTRandomDraw contract, &nbsp;&nbsp;-||
+|[src/ownable/IOwnableUpgradeable.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/ownable/IOwnableUpgradeable.sol)|[15](#nowhere "(nSLOC:15, SLOC:15, Lines:64)")|The interface to an owner safe-transferrable upgradeable openzeppelin fork, &nbsp;&nbsp;-||
+|[src/interfaces/IVRFNFTRandomDraw.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/interfaces/IVRFNFTRandomDraw.sol)|[62](#nowhere "(nSLOC:55, SLOC:62, Lines:129)")|Interface to the factory VRFNFTRandomDrawFactory contract, &nbsp;&nbsp;-||
+|Total (over 8 files):| [423](#nowhere "(nSLOC:381, SLOC:423, Lines:770)") |[89.41%](#nowhere "Hit:76 / Total:85")|
+
+
+## External imports
+* **@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol**
+  * [src/VRFNFTRandomDraw.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/VRFNFTRandomDraw.sol)
+* **@chainlink/contracts/src/v0.8/VRFCoordinatorV2.sol**
+  * [src/VRFNFTRandomDraw.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/VRFNFTRandomDraw.sol)
+* **@openzeppelin/contracts-upgradeable/proxy/ClonesUpgradeable.sol**
+  * [src/VRFNFTRandomDrawFactory.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/VRFNFTRandomDrawFactory.sol)
+* **@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol**
+  * [src/ownable/OwnableUpgradeable.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/ownable/OwnableUpgradeable.sol)
+* **@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol**
+  * [src/VRFNFTRandomDrawFactory.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/VRFNFTRandomDrawFactory.sol)
+* **@openzeppelin/contracts-upgradeable/token/ERC721/extensions/IERC721EnumerableUpgradeable.sol**
+  * [src/VRFNFTRandomDraw.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/VRFNFTRandomDraw.sol)
+  * [src/VRFNFTRandomDrawFactory.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/VRFNFTRandomDrawFactory.sol)
+* **@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol**
+  * [src/VRFNFTRandomDrawFactoryProxy.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/VRFNFTRandomDrawFactoryProxy.sol)
+
+
 
 ## Out of scope
 
@@ -91,6 +116,15 @@ If no users ultimately claim the NFT, the admin specifies a timelock period afte
 
 # Tests
 
+## Remapping issues
+None
+
+
+## Quickstart command
+Including this command may cut down on the number of build/test issues wardens ask about, and will let you point to a single command for them to try before attempting to debug a warden's build/test issue (☢️ do not include this explanation line if copying this section to your `README.md` ☢️)
+
+`rm -Rf 2022-12-forgeries || true && git clone https://github.com/code-423n4/2022-12-forgeries.git -j8 && cd 2022-12-forgeries && yarn && foundryup && yarn test-gas`
+
 ### To run tests:
 
 1. Setup `yarn`: https://yarnpkg.com/getting-started/install
@@ -100,5 +134,6 @@ If no users ultimately claim the NFT, the admin specifies a timelock period afte
 
 ### Slither notes:
 
-1. Slither will have issues with the try/catch blocks upon first test
-2. All test files and files from `chain.link` have issues that are out of scope in the repo for Slither.
+1. This project is tested and works with Slither v 0.9.0
+2. Slither will have issues with the try/catch blocks upon first test
+3. All test files and files from `chain.link` have issues that are out of scope in the repo for Slither.
