@@ -116,12 +116,8 @@ If no users ultimately claim the NFT, the admin specifies a timelock period afte
 
 # Tests
 
-## Remapping issues
-None
-
 
 ## Quickstart command
-Including this command may cut down on the number of build/test issues wardens ask about, and will let you point to a single command for them to try before attempting to debug a warden's build/test issue (☢️ do not include this explanation line if copying this section to your `README.md` ☢️)
 
 `rm -Rf 2022-12-forgeries || true && git clone https://github.com/code-423n4/2022-12-forgeries.git -j8 && cd 2022-12-forgeries && yarn && foundryup && yarn test-gas`
 
