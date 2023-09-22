@@ -1,0 +1,460 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q4-2022 / forgeries-dec13
+==============================================================
+
+[12/09/2022 18:52] kartoonjoy (pinned)
+👋 Hello and welcome to the contest channel for the $36,500 USDC **Forgeries** contest!
+
+📆 Contest opens 12/13/2022 20:00 (20:00 UTC) and runs through 12/16/2022 20:00 (20:00 UTC) (3 days).
+
+Please give a warm welcome to the Forgeries ⌐◨-◨ team, particularly @iain, who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-12-forgeries-contest
+
+{Embed}
+https://code4rena.com/contests/2022-12-forgeries-contest
+Code4rena Forgeries contest
+$36,500 USDC
+13 December 2022—16 December 2022
+Code4rena - ARCHIVE-Q4-2022 - forgeries-dec13 [1050845904233578516].txt_Files/C4-banner-7C19B.png
+
+
+[12/09/2022 19:18] ladboy233
+:chefskiss:
+
+
+[12/09/2022 19:20] kartoonjoy
+Pinned a message.
+
+
+[12/13/2022 05:45] chaduke#3730
+hi
+
+
+[12/13/2022 05:45] chaduke#3730
+let's work on it
+
+{Reactions}
+👍🏻 
+
+[12/13/2022 17:57] dicethedev
+Let's give it a shot
+
+
+[12/13/2022 20:02] capslockdave
+good luck and have fun everybody
+
+{Reactions}
+🔥 
+
+[12/13/2022 20:14] koolexc
+🔥
+
+
+[12/13/2022 20:23] thepicodes (pinned)
+**Automated Findings:** https://gist.github.com/Picodes/1060be69a981bf18fb2241609010db70
+
+
+[12/13/2022 20:25] kartoonjoy (pinned)
+Wardens, please note that c4udit output has been posted above and added to pinned posts. These are considered publicly known issues and are not eligible for awards.
+
+Automated findings: 
+https://gist.github.com/Picodes/1060be69a981bf18fb2241609010db70
+
+This will also be linked in the contest README file shortly.
+
+{Embed}
+https://gist.github.com/Picodes/1060be69a981bf18fb2241609010db70
+4naly3er-2022-12-forgeries.md
+GitHub Gist: instantly share code, notes, and snippets.
+Code4rena - ARCHIVE-Q4-2022 - forgeries-dec13 [1050845904233578516].txt_Files/gist-og-image-17482.png
+
+
+[12/13/2022 20:25] kartoonjoy
+Pinned a message.
+
+
+[12/13/2022 20:25] kartoonjoy
+Pinned a message.
+
+
+[12/13/2022 21:47] 0xigami
+Gm :nounish_disco_kid_dance: 
+
+Gami here, the originator of Forgeries, which started as a tweet thread.
+
+My collaborators @iain and @emre are the real brains behind the operation.
+
+We are here to answer any questions you might have.
+
+Thanks for taking part and good luck!!
+
+:noun_skateboard:
+
+{Reactions}
+👋🏻 (5) nice 🌊 (3) 
+
+[12/13/2022 21:48] iainnash
+gm all
+
+{Reactions}
+nounish_wavelength_left (2) nounish_wavelength_right (2) nounish_salute (3) nounish_milhouse_eyebrows (2) 
+
+[12/13/2022 21:49] 0xigami
+:noun_boombox:
+
+
+[12/13/2022 22:38] sovaslava9
+very short contracts and looks like without vulns, but I am just junior in auditing 😄
+
+{Reactions}
+nounish_milhouse_eyebrows (4) 
+
+[12/14/2022 02:44] 0xdeadbeef0x
+Hi! Who can I DM?
+
+
+[12/14/2022 03:20] dicethedev
+smile
+
+{Reactions}
+😃 
+
+[12/14/2022 03:23] 0xigami
+Best person for technical queries is @iain 
+I'm here to try my best, as I'm much less technical
+
+
+[12/14/2022 11:34] 0x1f8b
+When I run `forge test` I have 4 failing tests
+
+{Reactions}
+➕ 
+
+[12/14/2022 11:38] illilli000
+did you try the quickstart command?
+
+
+[12/14/2022 11:40] 0x1f8b
+No, did it by myself, seems that in Linux works and in Windows don't
+
+
+[12/14/2022 11:42] 0x1f8b
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2022 - forgeries-dec13 [1050845904233578516].txt_Files/IMG_20221214_124200_260-1D223.jpg
+
+
+[12/14/2022 11:42] 0x1f8b
+Weird, but I will use linux
+
+{Reactions}
+👍 
+
+[12/14/2022 11:43] road220
+winter? 😄
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2022 - forgeries-dec13 [1050845904233578516].txt_Files/image-D12D2.png
+
+
+[12/14/2022 11:51] neko_nyaa
+NFT winter :thonk:
+
+
+[12/14/2022 11:52] neko_nyaa
+~~also congrats you just gave away a QA issue~~
+
+{Reactions}
+💯 (5) 👀 (5) 
+
+[12/14/2022 12:03] koolexc
+Heyy, Who can I DM?
+
+
+[12/14/2022 12:45] ladboy233
+QA issue：typo in comment
+
+
+[12/14/2022 12:45] ladboy233
+winter is coming
+
+{Reactions}
+😂 (15) 
+
+[12/14/2022 14:17] emrecolako
+winners are coming lol
+
+
+[12/14/2022 17:16] aviggiano
+hi there
+I have a question about the audit scope of this contest
+The README says
+> 5. The NFT up for raffle and NFT that is used for the raffle are non-malicious contracts not attempting to compromise this raffle contract (within reason). Assume creators of raffles will do checks to ensure that the NFT itself is not compromised or unusual preventing the functioning of the raffle contract.
+If raffle creators try to rug users by creating a raffle with a specific set of parameters, and the contract fails to provide sufficient safeguards, is it also out of scope?
+
+
+[12/14/2022 20:33] iainnash
+Sorry, I don't have windows. Tests seem to work on linux and osx.
+
+
+[12/14/2022 20:34] iainnash
+Depends on a lot of definitions. There are already some safeguards on the parameters but it's also within reason since users can read the parameters as well.
+
+{Reactions}
+👍 
+
+[12/14/2022 20:38] aviggiano
+Thanks
+Another question: how will the funding of LINK tokens work for the `VRFNFTRandomDraw` contract? I don't see it in the docs
+
+
+[12/14/2022 21:42] iainnash
+The funding of LINK tokens happens through a subscription. See subscription ID.
+
+
+[12/14/2022 21:43] iainnash
+It's using the v2 of the chain.link contracts.
+
+{Reactions}
+👍 
+
+[12/14/2022 22:13] chaduke#3730
+after a winner claims the NFT, can we have another raffle with the same contract? Or at most one raffle for each VRFNFTRandomDraw?
+
+
+[12/15/2022 07:25] iainnash
+@chaduke The design was at most one raffle. Another contract will need to be made for another drawing.
+
+
+[12/15/2022 09:39] supernovahs
+@iain dmed
+
+
+[12/15/2022 14:59] 0xbtk
+@iain Dmed
+
+
+[12/15/2022 16:14] adriro
+@iain just sent you a dm
+
+
+[12/15/2022 16:32] iainnash
+gm – catching up.
+
+
+[12/15/2022 16:55] chaduke#3730
+@iaingot it
+
+
+[12/15/2022 16:55] chaduke#3730
+thanks
+
+
+[12/15/2022 22:33] koolexc
+@iain DMed
+
+
+[12/16/2022 07:48] kuldeep3336
+@iain dmed
+
+
+[12/16/2022 12:31] koolexc
+@iain 
+Is this intended for Ethereum blockchain only?
+
+
+[12/16/2022 15:27] bahoz.eth
+Just sent my submissions to this as my first ever contest, lets see how that ends up 🙂
+
+{Reactions}
+hi5 (12) 👍🏻 (2) 
+
+[12/16/2022 15:38] iainnash
+yes that's the design
+
+{Reactions}
+👍🏻 
+
+[12/16/2022 20:02] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **Forgeries ⌐◨-◨** contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+
+[12/26/2022 01:23] eyexploit
+how long on an average does it take for short contest?
+
+
+[01/21/2023 08:43] bahoz.eth
+apparently forever 😄
+
+{Reactions}
+😬 (2) 
+
+[01/23/2023 20:30] xyzbtchunt
+Any update?
+
+
+[01/26/2023 14:30] matin6517
+👀
+
+
+[01/31/2023 08:01] un_for_given
+https://github.com/code-423n4/code423n4.com/pull/7210/files
+
+{Embed}
+https://github.com/code-423n4/code423n4.com/pull/7210/files
+Update Leaderboard Jan 31 by liveactionllama · Pull Request #7210 ·...
+Code4rena - ARCHIVE-Q4-2022 - forgeries-dec13 [1050845904233578516].txt_Files/98446738-1A1F9
+
+{Reactions}
+🤙 chefskiss 
+
+[01/31/2023 14:56] itsmetechjay
+:C4Keycap:  💸 🎉 Awards for **Forgeries:**
+
+$18,435.06 USDC » @Trust 
+$1,134.22 USDC » poirots (@Davide Silva, @resende, @naps62 )
+$1,039.45 USDC » @gasperpre 
+$813.60 USDC » @IllIllI 
+$663.59 USDC » @evan 
+$618.25 USDC » SmartSek (@hake | SmartSek, @Django | Saloon Finance)
+$572.54 USDC » @hansfriese 
+$553.32 USDC » @orion 
+$525.16 USDC » @c3phas 
+$481.10 USDC » @9svR6w 
+$403.97 USDC » @neko_nyaaaaaaaaaaaaaaaaaaaaaaaaa 
+$365.84 USDC » @0xdeadbeef0x 
+$365.84 USDC » @deliriusz 
+$346.08 USDC » @codeislight 
+$320.13 USDC » @trustminimised 
+$320.13 USDC » @BAHOZ 
+$155.98 USDC » @Madalad 
+$129.49 USDC » Apocalypto (@cRat1st0s , @lucyoa, @M0ndoHEHE )
+$110.27 USDC » @yixxas 
+$110.27 USDC » @aga7hokakological 
+$110.27 USDC » @kaliberpoziomka8552 
+$110.27 USDC » @mookim 
+$110.27 USDC » @Matin 
+$110.27 USDC » @wagmi 
+$110.27 USDC » @subtle77 
+$90.88 USDC » @rvierdiiev 
+$71.66 USDC » @Rolezn 
+$71.66 USDC » @Bnke 
+$71.66 USDC » @RaymondFam 
+$71.66 USDC » @0x1f8b 
+$71.66 USDC » @Bobface 
+$71.66 USDC » @shark 
+$71.66 USDC » @adriro 
+$71.66 USDC » @code-cipher 
+$64.93 USDC » @obront 
+$64.93 USDC » @immeas 
+$64.93 USDC » @Zarf 
+$45.71 USDC » oyc_109
+$45.71 USDC » @cccz 
+$45.71 USDC » @Ruhum 
+$45.71 USDC » @petersspetrov 
+$45.71 USDC » @!0xcaventa 
+$45.71 USDC » @Deivitto 
+$45.71 USDC » @0xAgro 
+$45.71 USDC » @ayeslick 
+$45.71 USDC » @zzykxx 
+$45.17 USDC » @kuldeep 
+$45.17 USDC » @indijanc 
+$25.95 USDC » @nicobevi.eth 
+$25.95 USDC » @Rahoz 
+$25.95 USDC » @ReyAdmirado 
+$25.95 USDC » @chaduke 
+$25.95 USDC » @nadin 
+$25.95 USDC » @Sathish9098 
+$25.95 USDC » @ctrlc03 
+$25.95 USDC » @izhelyazkov 
+$25.95 USDC » @PaludoX0 
+$24.99 USDC » @Soosh 
+$19.22 USDC » @csanuragjain 
+$19.22 USDC » @dic0de 
+$19.22 USDC » @Tea🫖 
+$19.22 USDC » @ladboy233小伙子 
+$19.22 USDC » @sk8erboy 
+$19.22 USDC » @HE1M 
+$19.22 USDC » @hihen 
+$19.22 USDC » @carrotsmuggler 
+$19.22 USDC » @Koolex 
+$19.22 USDC » @bin2chen 
+$19.22 USDC » @btk 
+$19.22 USDC » @imare 
+$19.22 USDC » @Ch_301 
+$19.22 USDC » @neumo 
+$19.22 USDC » @sces60107 | GimelSec 
+$19.22 USDC » @gz627 
+$19.22 USDC » @jadezti 
+$19.22 USDC » @maks 
+$19.22 USDC » @dipp 
+
+🏁 Findings summary
+---------------------------
+High risk findings: 32 total, 2 unique
+Med risk findings: 24 total, 3 unique
+Gas findings: 24
+QA findings: 28 
+
+Awards will be distributed on Polygon within the next 1-2 weeks. Congratulations, everyone! 💸 💸 💸
+
+*If you participated in this contest and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+🎉 (10) 🐐 (2) 
+
+[01/31/2023 15:16] deliriusz
+@Trust , I'm almost sure that you're some kind of an alien spying on human race 😛 grats! 🎉
+
+{Reactions}
+😂 (10) 🫡 (4) 
+
+[01/31/2023 15:19] leosathya#5569
+This evening I saw podcast of Andy Li with trust, 
+
+Here he is table topper again, learn some new things from that podcast, hopefully i will apply those in my audit process,
+
+Thanks @Trust, Andy li
+
+
+[01/31/2023 21:31] .qeew
+@Trust Congrats man...this is another inspiring feat
+
+
+[01/31/2023 22:18] Bjorn_Bug#3314
+There is a way to check how my findings were labeled by the judges for this context?
+
+
+[02/01/2023 00:20] mookim
+wait for the report to be released, at that time the findings repo will be public, then you can check your issues
+
+{Reactions}
+hi5 
+
+[02/01/2023 14:55] kmanofficial
+@mookim check pm
+
+
+[02/03/2023 00:00] mookim
+@KmanOfficial also gives a quick method to check: take a look at leaderboard data https://raw.githubusercontent.com/code-423n4/code423n4.com/main/_data/findings/findings.csv , this file gives all wardens' all findings, including label data. (But still need to wait for the detail of the findings). For this contest, this file is updated by this pr: https://github.com/code-423n4/code423n4.com/pull/7210/files
+
+{Embed}
+https://github.com/code-423n4/code423n4.com/pull/7210/files
+Update Leaderboard Jan 31 by liveactionllama · Pull Request #7210 ·...
+Code4rena - ARCHIVE-Q4-2022 - forgeries-dec13 [1050845904233578516].txt_Files/98446738-1A1F9
+
+{Reactions}
+👍 
+
+==============================================================
+Exported 64 message(s)
+==============================================================
